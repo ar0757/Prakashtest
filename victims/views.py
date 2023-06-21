@@ -93,9 +93,8 @@ def victims_list(request):
 
 @api_view(['GET','PUT','DELETE'])
 def victims_detail(request, id):
-
     try:
-       victims = All_profiles.objects.get(pk=id)
+        victims = All_profiles.objects.get(pk=id)
     except All_profiles.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
